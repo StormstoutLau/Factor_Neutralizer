@@ -1,0 +1,2 @@
+# Factor_Neutralizer
+Factor_Neutralizer是一个量化因子中性化处理工具，支持行业中性化、市值中性化等多种中性化方法。
