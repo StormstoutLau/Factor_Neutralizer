@@ -194,23 +194,23 @@ residuals = y_clean - X_clean.values @ beta
 #### Bug-018: `_async_save_figure` 调用未更新
 - **问题**: Bug-014 修复中删除了 `_async_save_figure`，但 `_visualize_industry_rotation` 中仍有调用
 - **修复**: `self._async_save_figure(...)` → `self._save_figure_sync(...)`
-- **位置**: [FactorNeutralizer.py:1142](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1142)
+- **位置**: [FactorNeutralizer.py:1142](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1142)
 - **状态**: ✅ 已修复
 
 #### Bug-019: Pandas 3.0+ 兼容性警告
 - **问题**: `select_dtypes(include=['object'])` 产生 Pandas4Warning
 - **修复**: `select_dtypes(include=['object', 'str'])`
-- **位置**: [FactorNeutralizer.py:203](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L203)
+- **位置**: [FactorNeutralizer.py:203](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L203)
 - **状态**: ✅ 已修复
 
 #### Bug-020: Matplotlib 资源泄漏
 - **问题**: `plt.subplots()` 创建后若中间代码抛出异常，`plt.close(fig)` 不会执行，导致内存泄漏
 - **修复**: 3处 `fig, ax = plt.subplots(...)` + `plt.close(fig)` 改为 `try/finally` 模式确保资源释放
 - **位置**: 
-  - [FactorNeutralizer.py:1117](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1117) `_visualize_industry_rotation`
-  - [FactorNeutralizer.py:1217](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1217) `_visualize_market_value_rotation`
-  - [FactorNeutralizer.py:1255](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1255) `_visualize_index_rotation`
-  - [visualization_module.py:89,229](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/visualization/visualization_module.py#L89) `IndustryRotationVisualizer` + `MarketValueRotationVisualizer`
+  - [FactorNeutralizer.py:1117](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1117) `_visualize_industry_rotation`
+  - [FactorNeutralizer.py:1217](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1217) `_visualize_market_value_rotation`
+  - [FactorNeutralizer.py:1255](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1255) `_visualize_index_rotation`
+  - [visualization_module.py:89,229](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/visualization/visualization_module.py#L89) `IndustryRotationVisualizer` + `MarketValueRotationVisualizer`
 - **验证**: ✅ 29/29 测试通过，`py_compile` 语法检查通过
 - **状态**: ✅ 已修复
 
@@ -219,13 +219,13 @@ residuals = y_clean - X_clean.values @ beta
 - **修复**: 
   - `raise Exception("文件加载失败")` → `raise RuntimeError("文件加载失败")` (3处)
   - `raise Exception("格式不正确/不支持...")` → `raise ValueError(...)` (4处)
-- **位置**: [FactorNeutralizer.py:540,552,557,577,587,604,629](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L540)
+- **位置**: [FactorNeutralizer.py:540,552,557,577,587,604,629](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L540)
 - **状态**: ✅ 已修复
 
 #### Bug-022: 重复导入
 - **问题**: `import matplotlib.font_manager as fm` 在模块顶部和 `setup_chinese_font()` 前各出现一次
 - **修复**: 移除第52行的重复导入
-- **位置**: [FactorNeutralizer.py:26,52](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L26)
+- **位置**: [FactorNeutralizer.py:26,52](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L26)
 - **状态**: ✅ 已修复
 
 ---

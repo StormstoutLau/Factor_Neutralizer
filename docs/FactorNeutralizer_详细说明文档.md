@@ -464,7 +464,7 @@ A5: 程序已内置中文字体检测和回退机制：
 
 
 
-Factor_Neutralizer_v2.0 程序分析报告
+Factor_Neutralizer 程序分析报告
 📋 程序架构分析
 核心架构
 主程序: FactorNeutralizer.py (1305行，55.6KB)
@@ -519,7 +519,7 @@ FactorNeutralizer.py 是最优最新的版本，理由如下：
 方法数量: 37个核心方法
 测试覆盖: 完整的单元测试套件
 📊 依赖关系图
-FactorNeutralizer_v2.0
+FactorNeutralizer
 ├── 核心模块 (FactorNeutralizer.py)
 │   ├── 数据加载模块
 │   ├── 中性化处理模块

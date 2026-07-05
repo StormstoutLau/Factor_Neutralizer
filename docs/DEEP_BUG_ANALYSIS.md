@@ -10,7 +10,7 @@
 
 ### Bug-010: `warnings.filterwarnings('ignore')` 全局禁用所有警告
 
-**位置**: [FactorNeutralizer.py:11](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L11)
+**位置**: [FactorNeutralizer.py:11](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L11)
 
 **问题代码**:
 ```python
@@ -43,7 +43,7 @@ warnings.filterwarnings('ignore', category=FutureWarning, module='pandas')
 
 ### Bug-011: `_load_file_by_type` 返回 `None` 导致后续代码崩溃
 
-**位置**: [FactorNeutralizer.py:219-234](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L219-L234)
+**位置**: [FactorNeutralizer.py:219-234](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L219-L234)
 
 **问题代码**:
 ```python
@@ -91,7 +91,7 @@ def _load_file_by_type(self, file_path: str, file_type: str, **kwargs):
 
 ### Bug-012: `_fast_load_factor` 文件句柄未关闭（资源泄漏）
 
-**位置**: [FactorNeutralizer.py:298-306](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L298-L306)
+**位置**: [FactorNeutralizer.py:298-306](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L298-L306)
 
 **问题代码**:
 ```python
@@ -121,7 +121,7 @@ def _fast_load_factor(self, file_path: str):
 
 ### Bug-013: 缓存加载时的竞态条件
 
-**位置**: [FactorNeutralizer.py:270-286](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L270-L286)
+**位置**: [FactorNeutralizer.py:270-286](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L270-L286)
 
 **问题代码**:
 ```python
@@ -164,7 +164,7 @@ def _load_from_cache(self, cache_key: str):
 
 ### Bug-014: `_async_save_figure` 并非真正异步 + 线程池嵌套
 
-**位置**: [FactorNeutralizer.py:1032-1051](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1032-L1051)
+**位置**: [FactorNeutralizer.py:1032-1051](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1032-L1051)
 
 **问题代码**:
 ```python
@@ -216,7 +216,7 @@ def _batch_save_figures(self, figure_tasks: list):
 
 ### Bug-015: `_vectorized_industry_standardization` 除零风险
 
-**位置**: [FactorNeutralizer.py:767-803](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L767-L803)
+**位置**: [FactorNeutralizer.py:767-803](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L767-L803)
 
 **问题代码**:
 ```python
@@ -262,7 +262,7 @@ for industry in industry_series.unique():
 
 ### Bug-016: `_market_value_rotation_analysis` 中 `corr` 可能为 NaN
 
-**位置**: [FactorNeutralizer.py:1193-1196](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1193-L1196)
+**位置**: [FactorNeutralizer.py:1193-1196](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1193-L1196)
 
 **问题代码**:
 ```python
@@ -290,7 +290,7 @@ except Exception as e:
 
 ### Bug-017: `process_all_factors` 中异常吞没
 
-**位置**: [FactorNeutralizer.py:919-921](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L919-L921)
+**位置**: [FactorNeutralizer.py:919-921](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L919-L921)
 
 **问题代码**:
 ```python
@@ -317,7 +317,7 @@ except Exception as e:
 
 ### Bug-018: `main()` 函数硬编码路径
 
-**位置**: [FactorNeutralizer.py:1293-1311](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1293-L1311)
+**位置**: [FactorNeutralizer.py:1293-1311](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1293-L1311)
 
 **问题代码**:
 ```python
@@ -359,7 +359,7 @@ def main():
 
 ### Bug-019: `_optimize_memory_usage` 修改 DataFrame 类型可能丢失精度
 
-**位置**: [FactorNeutralizer.py:179-196](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L179-L196)
+**位置**: [FactorNeutralizer.py:179-196](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L179-L196)
 
 **问题描述**:
 - `pd.to_numeric(..., downcast='float')` 可能将 `float64` 转为 `float32` 甚至 `float16`
@@ -378,7 +378,7 @@ def _optimize_memory_usage(self, df: pd.DataFrame, allow_downcast: bool = True) 
 
 ### Bug-020: `resample('Q')` 已弃用
 
-**位置**: [FactorNeutralizer.py:968](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L968) 和 [FactorNeutralizer.py:1158](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L1158)
+**位置**: [FactorNeutralizer.py:968](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L968) 和 [FactorNeutralizer.py:1158](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L1158)
 
 **问题代码**:
 ```python
@@ -399,7 +399,7 @@ quarterly_data = factor_data.resample('QE').last()
 
 ### Bug-021: `_format_stock_code` 对非字符串输入处理不当
 
-**位置**: [FactorNeutralizer.py:158-177](file:///f:/Coding/Factor_Neutralizer_v2.0/factor_neutralizer/core/FactorNeutralizer.py#L158-L177)
+**位置**: [FactorNeutralizer.py:158-177](file:///f:/Coding/Factor_Neutralizer/factor_neutralizer/core/FactorNeutralizer.py#L158-L177)
 
 **问题代码**:
 ```python
