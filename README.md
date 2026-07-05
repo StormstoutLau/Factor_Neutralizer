@@ -1,9 +1,11 @@
-# Factor Neutralizer v2.1
+# Factor Neutralizer v2.2
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/Tests-29%2F29%20Passing-brightgreen)]()
 [![Code Style](https://img.shields.io/badge/Code%20Style-Black-black)]()
+
+**中文** | **[English](README_EN.md)**
 
 量化因子中性化处理工具，支持行业中性化、市值中性化等多种中性化方法。
 

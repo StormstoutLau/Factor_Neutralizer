@@ -1,5 +1,7 @@
 # Contributing Guidelines
 
+**中文** | **[English](CONTRIBUTING_EN.md)**
+
 ## 开发环境设置
 
 ```bash

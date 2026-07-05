@@ -1,5 +1,32 @@
 # Changelog
 
+**中文** | **[English](CHANGELOG_EN.md)**
+
+## [2.2.0] - 2026-05-17
+
+### Fixed
+- Bug-018: 修复 `_async_save_figure` NameError，改为调用 `_save_figure_sync()`
+- Bug-019: 修复 Pandas 3.0+ `select_dtypes` 警告，扩展为 `['object', 'str']`
+- Bug-020: 修复 Matplotlib `plt.subplots` 资源泄漏，5处改用 `try/finally`（FactorNeutralizer.py 3处 + visualization_module.py 2处）
+- Bug-022: 移除重复的 `import matplotlib.font_manager as fm` 语句
+- Bug-021: 7处裸 `raise Exception(...)` 替换为 `ValueError` / `RuntimeError`
+
+### Changed
+- 100+ 处 `print()` 替换为 `logger` 调用
+- 标准化 PEP 8 导入顺序（标准库→第三方→本地模块）
+- 31个方法添加类型注解
+- 5个魔法数字定义为模块常量：
+  - `CACHE_EXPIRY_SECONDS = 24 * 60 * 60`
+  - `JOBLIB_PROTOCOL = 4`
+  - `JOBLIB_COMPRESS_LEVEL = 3`
+  - `FILLNA_VALUE = 0`
+  - `DUMMY_DROP_FIRST = True`
+
+### Added
+- 中英文双语文档
+- GitHub 规范符合性分析报告
+- 工程规范报告
+
 ## [2.1.0] - 2026-05-11
 
 ### Fixed
