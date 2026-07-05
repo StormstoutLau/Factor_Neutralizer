@@ -1,4 +1,4 @@
-# Factor Neutralizer v2.1
+# Factor Neutralizer
 
 [![Python](https://img.shields.io/badge/Python-3.12%2B-blue)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
